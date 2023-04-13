@@ -6,5 +6,5 @@ chat_id = 324047628 # Ваш chat ID, не меняйте название пе�
 
 def solution(x: np.array, y: np.array) -> bool:
     alpha = 0.07
-    stats, pval = ttest_ind(x, y, equal_var=False, alternative='less')
+    pval = mannwhitneyu(x, y, alternative='less').pvalue
     return pval < alpha
